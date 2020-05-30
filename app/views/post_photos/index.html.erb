@@ -1,0 +1,33 @@
+<div class="container">
+	<div class="row">
+		<div class="flash-notice">
+			<%= flash[:notice] %>
+		</div>
+	</div>
+
+	<%= render 'post_photo_form', post_photo: @post_photo %>
+
+	<div class="row">
+		<div class="col-xs-3"></div>
+		<div class="col-xs-6">
+			<ul class="list-group">
+				<% @post_photos.each do |post_photo| %>
+					<li class="list-group-item">
+						<%= post_photo.user.name %>
+						<div class="btn-group">
+							<button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-align-justify"></i>
+							</button>
+							<div class="dropdown-menu">
+							    <i class="far fa-edit"><%= link_to "編集", edit_post_photo_path(post_photo), class:"dropdown-item" %></i><br>
+							    <i class="far fa-trash-alt"><%= link_to "削除", post_photo_path(post_photo), method: :delete, "data-confirm" => "本当に削除しますか？", class:"dropdown-item" %></i>
+							</div>
+						</div><br>
+						<%= attachment_image_tag post_photo, :photo, format: 'jpeg', class:"photo" %><br>
+						<i class="fas fa-map-marker-alt"></i><%= post_photo.location %><br>
+						<%= post_photo.caption %><br>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>

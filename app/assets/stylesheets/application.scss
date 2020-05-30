@@ -13,3 +13,47 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.row {
+	margin-bottom: 30px;
+}
+ul {
+	padding: 0;
+	margin-top: 10px;
+}
+li {
+	list-style: none;
+	float: right;
+	margin-left: 10px;
+}
+.post-btn {
+	color: white;
+	background-color: #94E087;
+}
+.post-btn:hover {
+	color: white;
+	background-color: #46C21A;
+}
+.list-group-item {
+	width: 100%;
+}
+.fa-map-marker-alt {
+	color: #FD7740;
+	margin-right: 5px;
+}
+.btn-group {
+	float: right;
+}
+.dropdown-menu {
+	text-align: center;
+}
+.fa-edit::before, .fa-trash-alt::before {
+	padding-right: 5px;
+}
+.photo {
+	width: 100%;
+	height: auto;
+}
+
