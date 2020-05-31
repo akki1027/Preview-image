@@ -1,7 +1,7 @@
 class PostPhotosController < ApplicationController
 	before_action :ensure_correct_user, only: [:edit, :update]
   def index
-  	@post_photos = PostPhoto.all
+  	@post_photos = PostPhoto.all.reverse_order
   	@post_photo = PostPhoto.new
   end
 
